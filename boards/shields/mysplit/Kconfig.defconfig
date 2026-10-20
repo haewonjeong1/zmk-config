@@ -1,0 +1,26 @@
+# 오른쪽 = 마스터(central)
+if SHIELD_MYSPLIT_RIGHT
+
+# 16자 미만! PC 블루투스 목록에 보이는 이름
+config ZMK_KEYBOARD_NAME
+    default "SplitKB"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+# ---- 세 번째 보드를 붙일 때 아래 주석을 풀어주세요 ----
+# config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+#     default 2
+# config BT_MAX_CONN
+#     default 7
+# config BT_MAX_PAIRED
+#     default 7
+
+endif
+
+if SHIELD_MYSPLIT_LEFT || SHIELD_MYSPLIT_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
